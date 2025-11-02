@@ -17,10 +17,10 @@ def reconocer_persona(path_foto):
     vec = image_to_vector(path_foto)
     if vec is not None:
 
-        network = HammingNetwork(names, vectors, threshold=0.23)
+        network = HammingNetwork(names, vectors, threshold=0.30)
         nombre, dist, best_index = network.classify(vec)
 
-        if nombre == "Desconocido":
+        if nombre == "unknown":
             closest_name = network.names[best_index]
             print(f"Resultado: Persona desconocida. Similitud más cercana con '{closest_name}' (distancia={dist:.4f}).")
             print("La distancia supera el umbral de reconocimiento.")
