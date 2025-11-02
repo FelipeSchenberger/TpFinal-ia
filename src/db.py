@@ -21,6 +21,14 @@ def insert_face(name, vector):
     conn.commit()
     conn.close()
 
+def clear_db():
+    """Limpia todas las entradas de la base de datos"""
+    conn = sqlite3.connect(DB_NAME)
+    c = conn.cursor()
+    c.execute("DELETE FROM faces")
+    conn.commit()
+    conn.close()
+
 def load_faces():
     conn = sqlite3.connect(DB_NAME)
     c = conn.cursor()

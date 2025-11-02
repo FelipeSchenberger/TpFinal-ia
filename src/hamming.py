@@ -7,7 +7,6 @@ class HammingNetwork:
         self.threshold = threshold
 
     def classify(self, input_vector):
-
         input_vector = np.array(input_vector, dtype=float)
 
         distances = np.mean(np.abs(self.patterns - input_vector), axis=1)
@@ -16,6 +15,6 @@ class HammingNetwork:
         best_distance = distances[best_index]
 
         if best_distance > self.threshold:
-            return "Desconocido", best_distance, best_index
+            return "unknown", best_distance, best_index
         else:
             return self.names[best_index], best_distance, best_index
