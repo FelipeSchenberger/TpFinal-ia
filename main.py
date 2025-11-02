@@ -1,6 +1,6 @@
-from db import create_db, insert_face, load_faces
-from preprocess import image_to_vector
-from hamming import HammingNetwork
+from src.db import create_db, insert_face, load_faces
+from src.preprocess import image_to_vector
+from src.hamming import HammingNetwork
 
 def registrar_persona(nombre, path_foto):
     vec = image_to_vector(path_foto)

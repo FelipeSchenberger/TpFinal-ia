@@ -16,7 +16,7 @@ def create_db():
 def insert_face(name, vector):
     conn = sqlite3.connect(DB_NAME)
     c = conn.cursor()
-    c.execute("INSERT INTO faces (name, vector) VALUES (?, ?)", 
+    c.execute("INSERT INTO faces (name, vector) VALUES (?, ?)",
               (name, vector.astype(np.uint8).tobytes()))
     conn.commit()
     conn.close()
