@@ -17,7 +17,7 @@ def reconocer_persona(path_foto):
     vec = image_to_vector(path_foto)
     if vec is not None:
 
-        network = HammingNetwork(names, vectors, threshold=0.30)
+        network = HammingNetwork(names, vectors, threshold=0.23)
         nombre, dist, best_index = network.classify(vec)
 
         if nombre == "unknown":

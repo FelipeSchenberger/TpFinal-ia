@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import os
 
-def image_to_vector(path, size=(64, 80), visualizar=True):
+def image_to_vector(path, size=(63, 63), visualizar=True):
     if not os.path.exists(path):
         raise FileNotFoundError(f"No se encontró la imagen: {path}")
 

@@ -8,6 +8,7 @@ from src.preprocess import image_to_vector
 from src.hamming import HammingNetwork
 
 images_folder = "images"
+image_size = (63, 63) # mejor efectividad con esta resolución
 
 def load_images(exclude_number):
     """
@@ -42,7 +43,7 @@ def load_images(exclude_number):
             else:
                 person_name = name_without_ext
 
-            vector = image_to_vector(image_path, visualizar=False)
+            vector = image_to_vector(image_path, size=image_size, visualizar=False)
 
             insert_face(person_name, vector)
             processed_count += 1
@@ -78,7 +79,7 @@ def test(test_image_number: int):
                 else:
                     true_name = name_without_ext
 
-                vector = image_to_vector(image_path, visualizar=False)
+                vector = image_to_vector(image_path, size=image_size, visualizar=False)
                 predicted_name, distance, best_index = network.classify(vector)
 
                 # Determinar el tipo de resultado
