@@ -1,26 +1,32 @@
 How to use main.py
 
+## Creamos un entorno virtual
 python -m venv .venv
 
+## Levantamos el entorno virtual
 .\.venv\Scripts\activate (windows)
 source .venv/bin/activate (linux)
 
+## Instalamos las dependencias necesarias
 pip install -r requirements.txt
 
 ## Bash
 python main.py
-This command create the database (if it doesn’t exist).
+Este comando crea la base de datos si es que no existe
 
-## Choose an option
+## Elegi una opcion
 1) Registrar persona
 2) Reconocer persona
+3) Salir
 Elige:
 
-1) ## In case of choosing n1
+1) ## En caso de elegir 1
 Nombre de la persona: Alice
 Ruta de la foto: images/alice.jpg
 [OK] Persona Alice registrada en la BD
 
-2) ## In case of choosing n2
+2) ## En caso de elegir 2
 Ruta de la foto a reconocer: test.jpg
-La foto se parece más a: Alice (distancia=42)
+La foto se parece más a: Alice (distancia=0.23)
+
+3) ## En caso de elegi 3

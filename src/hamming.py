@@ -1,13 +1,8 @@
 import numpy as np
 
 class HammingNetwork:
-    def __init__(self, names, patterns, threshold=0.25, binary=False):
-        """
-        names: etiquetas o nombres de los patrones
-        patterns: lista de patrones binarios (0/1) o vectores de características
-        threshold: máximo valor de diferencia aceptado para considerar reconocimiento válido
-        binary: si True, usa distancia de Hamming (solo para vectores 0/1)
-        """
+    def __init__(self, names, patterns, threshold=0.25, binary=True):
+
         self.names = names
         self.patterns = np.array(patterns, dtype=float)
         self.threshold = threshold
